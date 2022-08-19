@@ -1,0 +1,78 @@
+<form [formGroup] = 'form'>
+  <label for="fill" >FullName
+    <input formControlName = 'fullName' id = 'fill'/>
+  </label>
+  <label for="fill">BirthDate
+    <input formControlName = 'birthDate' id = 'fill'/>
+  </label>
+  <label for="fill">Profession
+    <input formControlName = 'profession' id = 'fill'/>
+  </label>
+  <label for="fill">Sex
+    <input formControlName = 'sex' id = 'fill'/>
+  </label>
+  <label for="fill">Location
+    <input formControlName = 'location' id = 'fill'/>
+  </label>
+  <label for="fill">Street
+    <input formControlName = 'street' id = 'fill'/>
+  </label>
+  <label for="fill">House
+    <input formControlName = 'house' id = 'fill'/>
+  </label>
+  <label for="fill">Flat
+    <input formControlName = 'flat' id = 'fill'/>
+  </label>
+  <label for="fill">JobPlace
+    <input formControlName = 'jobPlace' id = 'fill'/>
+  </label>
+  <label for="fill">SocialStatus
+    <input formControlName = 'socialStatusId' id = 'fill'/>
+  </label>
+  <label for="fill">SocialGroup
+    <input formControlName = 'socialGroupId' id = 'fill'/>
+  </label>
+  <label for="fill">categoryId
+    <input formControlName = 'categoryId' id = 'fill'/>
+  </label>
+  <label for="fill">districtId
+    <input formControlName = 'districtId' id = 'fill'/>
+  </label>
+  
+    
+</form>
+<pre>{{form.value|json}}</pre>
+
+
+<h2>{{ name }}</h2>
+
+<div *ngFor="let p of personData">{{ p.fullName }} - {{ p.location }}</div>
+
+<ol>
+  <li *ngFor="let r of referenceData">{{ r.id }} - {{ r.name }}</li>
+</ol>
+<div class="hren"></div>
+
+<div *ngFor="let s of socialGroup">{{ s.id }} - {{ s.name }}</div>
+
+<input type="text" [(ngModel)]="name" />
+
+<div>
+  <h1>Reference</h1>
+  <input type="text" [(ngModel)]="referenceName" />
+  <h2>{{ referenceName }}</h2>
+  <button (click)="saveReference()">Сохранить</button>
+</div>
+
+<hr />
+
+<div>
+  <h1>SocialGroup</h1>
+  <input type="text" [(ngModel)]="socialGroupName" />
+  <h2>{{ referenceName }}</h2>
+  <button (click)="saveSocialGroupStatus()">Сохранить</button>
+</div>
+
+<router-outlet> </router-outlet>
+<!-- <button [disabled]="!isActive">Add person</button> -->
+
